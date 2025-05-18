@@ -4,6 +4,8 @@ import { users } from "./products/users.js";
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
 
 app.get("/products", (req, res) => {
@@ -49,6 +51,6 @@ app.get("/users/:id", (req, res) => {
   res.json(findUser);
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("App running on PORT 3000");
 });

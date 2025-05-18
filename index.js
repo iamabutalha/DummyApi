@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json("Welcome to the dummy api, docs will be added soon");
+});
+
 app.get("/products", (req, res) => {
   res.json(products);
 });

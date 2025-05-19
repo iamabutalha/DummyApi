@@ -4,11 +4,13 @@ import { users } from "./products/users.js";
 import path from "path";
 import productRouter from "./routes/product.route.js";
 import userRouter from "./routes/user.route.js";
+import cors from "cors";
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   const filePath = path.join(process.cwd(), "index.html");

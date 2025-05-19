@@ -25,8 +25,8 @@ export const users = [
   },
   {
     id: 5,
-    name: "Abu Talha Khalil",
-    occupation: "Product Manager",
+    name: "Heisenberg",
+    occupation: "Film Actor",
     phone: "555-567-8901",
   },
   {

@@ -195,6 +195,36 @@ fetch('/products/user/1')
           >
         </div>
 
+        <!-- Get all users -->
+        <div class="card">
+          <h2 style="margin: 0 0 8px 0">Get all users</h2>
+          <code>GET /users</code>
+          <a href="/users" target="_blank">Try it →</a>
+          <p>You can make a request like:</p>
+          <pre class="example-code">
+fetch('/users')
+  .then(res => res.json())
+  .then(data => console.log(data));</pre
+          >
+          <p>Example response:</p>
+          <pre>
+[
+  {
+    "id": 0,
+    "name": "John Doe",
+    "occupation": "Product Manager",
+    "phone": "555-000-1111"
+  },
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "occupation": "Software Engineer",
+    "phone": "555-123-4567"
+  }
+]</pre
+          >
+        </div>
+
         <!-- Get a user by id -->
         <div class="card">
           <h2 style="margin: 0 0 8px 0">Get a user by id</h2>

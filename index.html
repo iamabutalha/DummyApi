@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api Docs</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+
+      h1 {
+        text-align: center;
+        border-bottom: 2px solid black;
+        padding-bottom: 10px;
+      }
+
+      section {
+        margin-top: 30px;
+      }
+
+      .card {
+        border: 1px solid black;
+        border-radius: 4px;
+        padding: 16px;
+        margin-bottom: 18px;
+      }
+
+      .card-strong {
+        border: 2px solid black;
+      }
+
+      code {
+        display: block;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+      }
+
+      pre {
+        background: none;
+        border: 1px solid black;
+        border-radius: 3px;
+        padding: 8px;
+        margin: 0;
+        overflow-x: auto;
+        font-size: 14px;
+      }
+
+      .example-code {
+        background: #f5f5f5;
+        padding: 10px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+
+      footer {
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+        white-space: pre-wrap;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          margin: 20px auto;
+        }
+
+        pre,
+        .example-code {
+          font-size: 13px;
+        }
+
+        code {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Dummy Api for Learning and Testing</h1>
+
+      <!-- Get all products -->
+      <section>
+        <div class="card card-strong">
+          <h2 style="margin: 0 0 8px 0">Get all products</h2>
+          <code>GET /products</code>
+          <a href="/products" target="_blank">Try it →</a>
+          <p>You can make a request like:</p>
+          <pre class="example-code">
+fetch('/products')
+  .then(res => res.json())
+  .then(data => console.log(data));</pre
+          >
+          <p>Example response:</p>
+          <pre>
+[
+  {
+    "id": 1,
+    "image": "https://example.com/images/tshirt1.jpg",
+    "name": "Classic Cotton T-Shirt",
+    "rating": 4.5,
+    "price": 19.99,
+    "keywords": ["tshirt", "cotton", "casual"],
+    "userId": 0,
+    "type": "tshirt",
+    "sizeChart": "https://example.com/sizecharts/tshirt"
+  },
+  {
+    "id": 2,
+    "image": "https://example.com/images/hoodie1.jpg",
+    "name": "Cozy Fleece Hoodie",
+    "rating": 4.7,
+    "price": 39.99,
+    "keywords": ["hoodie", "warm"],
+    "userId": 1,
+    "type": "hoodie",
+    "sizeChart": "https://example.com/sizecharts/hoodie"
+  }
+]</pre
+          >
+        </div>
+
+        <!-- Get product by keyword -->
+        <div class="card">
+          <h2 style="margin: 0 0 8px 0">Get product by keyword</h2>
+          <code>GET /products/{keyword}</code>
+          <a href="/products/shoes" target="_blank">Try it with "shoes" →</a>
+          <p>You can make a request like:</p>
+          <pre class="example-code">
+fetch('/products/shoes')
+  .then(res => res.json())
+  .then(data => console.log(data));</pre
+          >
+          <p>Example response:</p>
+          <pre>
+[
+  {
+    "id": 4,
+    "image": "https://example.com/images/shoes1.jpg",
+    "name": "Running Sneakers",
+    "rating": 4.6,
+    "price": 59.99,
+    "keywords": ["shoes", "running", "sport"],
+    "userId": 0
+  }
+]</pre
+          >
+        </div>
+
+        <!-- Get products of a specific user -->
+        <div class="card">
+          <h2 style="margin: 0 0 8px 0">Get products of a specific user</h2>
+          <code>GET /products/user/{userId}</code>
+          <a href="/products/user/1" target="_blank">Try it with userId 1 →</a>
+          <p>You can make a request like:</p>
+          <pre class="example-code">
+fetch('/products/user/1')
+  .then(res => res.json())
+  .then(data => console.log(data));</pre
+          >
+          <p>Example response:</p>
+          <pre>
+[
+  {
+    "id": 2,
+    "image": "https://example.com/images/hoodie1.jpg",
+    "name": "Cozy Fleece Hoodie",
+    "rating": 4.7,
+    "price": 39.99,
+    "keywords": ["hoodie", "warm"],
+    "userId": 1,
+    "type": "hoodie",
+    "sizeChart": "https://example.com/sizecharts/hoodie"
+  },
+  {
+    "id": 6,
+    "image": "https://example.com/images/mug1.jpg",
+    "name": "Ceramic Coffee Mug",
+    "rating": 4.2,
+    "price": 9.99,
+    "keywords": ["mug", "kitchen", "coffee"],
+    "userId": 1
+  }
+]</pre
+          >
+        </div>
+
+        <!-- Get a user by id -->
+        <div class="card">
+          <h2 style="margin: 0 0 8px 0">Get a user by id</h2>
+          <code>GET /users/{id}</code>
+          <a href="/users/1" target="_blank">Try it with id 1 →</a>
+          <p>You can make a request like:</p>
+          <pre class="example-code">
+fetch('/users/1')
+  .then(res => res.json())
+  .then(data => console.log(data));</pre
+          >
+          <p>Example response:</p>
+          <pre>
+{
+  "id": 1,
+  "name": "Alice Johnson",
+  "occupation": "Software Engineer",
+  "phone": "555-123-4567"
+}</pre
+          >
+        </div>
+
+        <footer>Coded and maintained with ❤️ by AbuTalha © 2025</footer>
+      </section>
+    </main>
+  </body>
+</html>
